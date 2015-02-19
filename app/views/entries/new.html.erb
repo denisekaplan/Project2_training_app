@@ -3,7 +3,7 @@
 <h1>Log Your Baby's Sleep Pattern!</h1>
 <!-- f= form -->
 <%= form_for @entry do |f| %>
-  Date: <%= f.date_field :date %>
+  Night #: <%= f.number_field :night_number %>
   Bedtime: <%= f.time_field :bedtime %>
   Awake: <%= f.time_field :awake %>
   Asleep: <%= f.time_field :asleep %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150217174728) do
+ActiveRecord::Schema.define(version: 20150219031417) do
 
   create_table "babies", force: true do |t|
     t.string   "name"
@@ -24,17 +24,18 @@ ActiveRecord::Schema.define(version: 20150217174728) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "night_number"
   end
 
   create_table "entries", force: true do |t|
-    t.date     "date"
     t.time     "bedtime"
     t.time     "awake"
     t.time     "asleep"
     t.time     "wake_up"
     t.integer  "baby_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "night_number"
   end
 
   create_table "parents", force: true do |t|

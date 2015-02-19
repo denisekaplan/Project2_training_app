@@ -23,7 +23,7 @@ class ParentsController < ApplicationController
     @parent = Parent.where(id: params[:id]).first
       # shows all the babies for the parent
       @babies = @parent.babies
-      # @entries = @babies.entries
+      
 
       if @parent != nil
       else
