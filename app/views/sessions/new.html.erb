@@ -1,0 +1,14 @@
+new.html.erb
+<!-- copied from parents-> new.html.erb -->
+<h1> Sleep Trainer </h1>
+<h2> Because if your kid ain't sleeping, neither are you!</h2>
+<p>Fact: If you don't sleep, you will turn into a moron, go crazy and die! (Okay, I totally made that up, but it definitely feels true.)</p>
+
+<h3> Log in and get this kid sleeping so you can too! </h3>
+
+<%= form_for @parent, :url => { :controller => "sessions", :action => "create" } do |f| %>
+    <%= f.text_field :email, :placeholder => "Enter your email" %><br />
+    <%= f.password_field :password, :placeholder => "Enter your password" %><br />
+    <%= f.submit "Log In"%><br />
+    <%= link_to "Click here to sign up", new_parent_path %>
+<% end %>

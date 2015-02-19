@@ -1,0 +1,14 @@
+<h1>Entries#new</h1>
+
+<h1>Log Your Baby's Sleep Pattern!</h1>
+<!-- f= form -->
+<%= form_for @entry do |f| %>
+  Date: <%= f.date_field :date %>
+  Bedtime: <%= f.time_field :bedtime %>
+  Awake: <%= f.time_field :awake %>
+  Asleep: <%= f.time_field :asleep %>
+  Wake Up: <%= f.time_field :wake_up %>
+  
+
+  <%= f.submit "Log This Night" %>
+<% end %>

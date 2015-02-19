@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2015-02-16
+  bedtime: 2015-02-16 21:00:59
+  awake: 2015-02-16 21:00:59
+  asleep: 2015-02-16 21:00:59
+  wake_up: 2015-02-16 21:00:59
+
+two:
+  date: 2015-02-16
+  bedtime: 2015-02-16 21:00:59
+  awake: 2015-02-16 21:00:59
+  asleep: 2015-02-16 21:00:59
+  wake_up: 2015-02-16 21:00:59

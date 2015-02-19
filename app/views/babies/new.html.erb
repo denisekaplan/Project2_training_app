@@ -1,0 +1,13 @@
+<h1>Babies#new</h1>
+<p>Find me in app/views/babies/new.html.erb</p>
+<h1>Enter Your Baby's Info</h1>
+<!-- f= form -->
+<%= form_for @baby do |f| %>
+  Name: <%= f.text_field :name %>
+  Age: <%= f.number_field :age %>
+  Gender: <%= f.text_field :gender %>
+  Avatar <%= f.file_field :avatar %>
+  
+
+  <%= f.submit "Let's get this kid sleeping!" %>
+<% end %>

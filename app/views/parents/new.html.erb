@@ -1,0 +1,24 @@
+
+<!-- always use an = for form_for! -->
+<div class="parent container">
+	<h1>Sign up!</h1>
+
+	<%= form_for @parent do |f|%>
+		<div id= "parent name">
+			<p>Name: <%= f.text_field :name, :placeholder => "Enter your name"  %></p>
+		</div>
+
+		<div id= "email"
+			<p>Email: <%= f.text_field :email, :placeholder => "Enter your email"  %></p>
+		</div>
+
+		<div id= "password"
+			<p>Password: <%= f.password_field :password, :placeholder => "Create a password"  %></p>
+
+			<p>Password Confirmation: <%= f.password_field :password_confirmation, :placeholder => "Confirm your password"  %></p>
+		</div>
+
+			<br />
+	<%= f.submit "I want to sleep!" %>
+<% end %>
+</div>

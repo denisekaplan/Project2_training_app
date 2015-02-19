@@ -1,0 +1,14 @@
+
+<p>Find me in app/views/babies/edit.html.erb</p>
+
+<h1>Edit Baby Info</h1>
+
+<%= form_for @baby do |f| %>
+	Name: <%= f.text_field :name %>
+	Age: <%= f.number_field :age %> months
+	Change Picture: <%= f.file_field :avatar %>
+
+  <%= f.submit "Update Baby Info" %>
+<% end %>
+
+<%= link_to "Back to the Baby List!", babies_path %>

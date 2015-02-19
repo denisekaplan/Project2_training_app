@@ -1,0 +1,19 @@
+<h1>Parents#show</h1>
+<p>
+Hi, <%= current_parent.name %>!<br />
+<br /><br />
+Choose a baby:
+<br /><br />
+	<% @babies.each do |baby| %>
+<br /><br />
+<%= image_tag baby.avatar.url(:thumb) %>
+I'm <%= baby.name %> and I'm <%= baby.age %> months old! </td>
+<% end%>
+
+<%= link_to "Edit Baby Info", edit_baby_path %>
+<%#= image_tag @user.avatar.url %>
+<%#= image_tag @user.avatar.url(:medium) %>
+<%#= image_tag @user.avatar.url(:thumb) %>
+
+<%#= link_to 'Edit Sleep Journal', edit_journal_path(@journal) %>
+<%#= link_to 'Edit Baby Profile', edit_baby_path %>

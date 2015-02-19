@@ -1,0 +1,29 @@
+<!-- THIS IS WHERE YOU LEFT OFF!  IS CURRENT_USER A THING OR IS IT CURRENT_PARENT -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sleep Training App</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <% if current_parent != nil %>
+	This is the person who's logged in: <%= current_parent.name %>
+	
+	<!-- with a button it's always post / link does a get request -->
+	<%= button_to "Log out", sessions_path, method: :delete %>
+
+  <% else %>
+	<%= button_to "Sign up", new_parent_path, method: :get %>
+	<%= link_to "Log in", new_sessions_path %> 
+  <% end %>
+	<%#= session["parent_id"].inspect %>
+<hr />
+
+<%= yield %>
+
+</body>
+</html>
