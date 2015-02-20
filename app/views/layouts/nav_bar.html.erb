@@ -7,7 +7,7 @@
   <%= button_to "Log out", sessions_path, method: :delete %>
 
   <% else %>
-  <%= button_to "Sign up", new_parent_path, method: :get %>
+  <%= button_to "Sign up", new_parent_path, method: :get, class: "" %>
   <%= link_to "Log in", new_sessions_path %> 
   <% end %>
   </div>
@@ -18,10 +18,29 @@
 <nav class= "navbar">
 <div class="container-fluid">
 <ul>
-  <li><a href="default.asp">Sign Up!</a></li>
-  <li><a href="news.asp">News</a></li>
-  <li><a href="contact.asp">Contact</a></li>
-  <li><a href="about.asp">About</a></li>
+  <li><a href="">Your Babies</a></li>
+  <li><a href="">Journals</a></li>
+<!--   <li><a href="contact.asp">Contact</a></li>
+  <li><a href="about.asp">About</a></li> -->
 </ul>
 </div>
 </nav>
+
+<div class="container">
+      <h2>Pill with Dropdown Menu</h2>
+      <ul class="nav nav-pills" role="tablist">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          Tutorials <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">JavaScript</a></li>
+            <li> <%= button_to "Log out", sessions_path, method: :delete %></li>
+                        
+          </ul>
+        </li>
+      </ul>
+    </div>

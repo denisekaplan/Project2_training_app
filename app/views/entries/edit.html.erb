@@ -1,2 +1,12 @@
-<h1>Entries#edit</h1>
-<p>Find me in app/views/entries/edit.html.erb</p>
+<h1>Edit Sleep Journal</h1>
+
+<%= form_for @entry do |f| %>
+  Night #: <%= f.number_field :night_number %>
+  Bedtime: <%= f.time_field :bedtime %>
+  Awake: <%= f.time_field :awake %>
+  Asleep: <%= f.time_field :asleep %>
+  Wake Up: <%= f.time_field :wake_up %>
+  
+
+  <%= f.submit "Update Journal" %>
+<% end %>

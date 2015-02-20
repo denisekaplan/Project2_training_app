@@ -1,34 +1,19 @@
 Rails.application.routes.draw do
 
   resources :parents #, only: [:index, :new, :create, :show, :edit]
-  resources :babies #, only: [:index, :new, :create, :show, :edit]
-  resources :entries #, only: [:index, :new, :create, :show, :edit]
   resources :photos
   resource :sessions, only: [:new, :create, :destroy]
+  # Establish a nested route with entries inside of babies
+  resources :babies #, only: [:index, :new, :create, :show, :edit] 
+  resources :entries #, only: [:index, :new, :create, :show, :edit]
+ 
 
-  
-  # get 'entries/index'
-  # get 'entries/new'
-  # get 'entries/show'
-  # get 'entries/edit'
-  # get 'journals/index'
-  # get 'journals/new'
-  # get 'journals/show'
-  # get 'journals/edit'
-  # get 'babies/index'
-  # get 'babies/new'
-  # get 'babies/show'
-  # get 'babies/edit'
-  # get 'parents/index'
-  # get 'parents/new'
-  # get 'parents/show'
-  # get 'parents/edit'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'parents#show'
+  root 'sessions#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

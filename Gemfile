@@ -29,6 +29,8 @@ gem 'bcrypt', '~> 3.1.7'
 # paperclip gem
 gem "paperclip", "~> 4.2"
 
+gem 'bootstrap-sass', '~> 3.2.0'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

@@ -9,7 +9,7 @@ class ParentMailer < ApplicationMailer
     @greeting = "Hi"
     @name = name
 
-    mail to: "to@example.org"
+    mail to: "denise.s.kaplan@gmail.com", subject: "Test email"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

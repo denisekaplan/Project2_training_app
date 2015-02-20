@@ -1,11 +1,35 @@
-<h1>Babies#show</h1>
-<p>Find me in app/views/babies/show.html.erb</p>
+<p>Babies#show</p>
 
 <% @babies.each do |baby| %>
 <%= image_tag baby.avatar.url(:medium) %>
 I'm <%= baby.name %> and I'm <%= baby.age %> months old!
-<%= baby.entries %>
+
 <% end %>
+<%= @baby.name %>'s Sleep Journal
+<table class= "table table-striped">
+	<thead>
+		<tr>
+			<th>Night #</th>
+			<th>Bedtime</th>
+			<th>Asleep</th>
+			<th>Awake</th>
+			<th>Wake Up</th>
+		</tr>
+	</thead>
+	<% @baby.entries.each do |entry| %>
+		<tr>
+			<td><%= entry.night_number %></td>
+			<td><%= entry.bedtime %></td>
+			<td><%= entry.awake %></td>
+			<td><%= entry.asleep %></td>
+			<td><%= entry.wake_up %></td>
+	 	</tr>
+	<% end %> 			  
+</table>
+<%= link_to "Edit Journal Info", edit_entry_path %>
+<%= link_to "Add New Night", new_entry_path %>
 
 
 
+ 
+ 

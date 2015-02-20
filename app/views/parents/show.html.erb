@@ -4,12 +4,10 @@ Hi, <%= current_parent.name %>!<br />
 <br />
 Choose a baby: 
 <br />
-	<% current_parent.babies.each do |baby| %>
-<br />
-
-<img><%= link_to(image_tag(baby.avatar.url(:medium)), baby) %></img>
-I'm <%= baby.name %> and I'm <%= baby.age %> months old! </td>
-<%= link_to "Edit Baby Info", edit_baby_path(baby) %>
+<% current_parent.babies.each do |baby| %>
+	<img><%= link_to(image_tag(baby.avatar.url(:medium)), baby) %></img>
+	I'm <%= baby.name %> and I'm <%= baby.age %> months old! </td>
+	<%= link_to "Edit Baby Info", edit_baby_path(baby) %>
 <% end%>
 
 

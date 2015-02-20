@@ -4,7 +4,7 @@
 <!-- f= form -->
 <%= form_for @baby do |f| %>
   Name: <%= f.text_field :name %>
-  Age: <%= f.number_field :age %>
+  Age (in months): <%= f.number_field :age %> 
   Gender: <%= f.text_field :gender %>
   Avatar <%= f.file_field :avatar %>
   
