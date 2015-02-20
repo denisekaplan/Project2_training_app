@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150219031417) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "babies", force: true do |t|
     t.string   "name"
     t.integer  "age"
@@ -57,6 +60,7 @@ ActiveRecord::Schema.define(version: 20150219031417) do
     t.datetime "image_updated_at"
   end
 
-  add_index "photos", ["parent_id"], name: "index_photos_on_parent_id"
+  add_index "photos", ["parent_id"], name: "index_photos_on_parent_id", using: :btree
 
+  add_foreign_key "photos", "parents"
 end

@@ -11,21 +11,22 @@ class BabiesController < ApplicationController
   def create
   		# no need for it to be an instance variable (have an @), b/c we're not rendering a view
   	  baby = Baby.new(params.require(:baby).permit(:name, :age, :gender, :avatar))
-      parent = current_parent
-      parent.babies << baby
+      baby.parent = current_parent
+      #parent.babies << baby
   	 
       if baby.save
-  	  	  redirect_to new_entry_path(id: parent.id)
+  	  	  redirect_to new_baby_entry_path(baby_id: baby.id)
   	  	else 
-          raise.inspect "else called"
+          raise "else called"
   	  		render 'new'
   	  end
   end
 
   def show
     @baby = Baby.where(id: params[:id]).first
-    @babies = Baby.where(id: params[:id])
-    @entries = @baby.entries
+    # @babies = Baby.where(id: params[:id])
+    # @entries = @baby.entries
+    # @entry = @baby.entries
     # @entries = Entry.where(baby_id: params[:id])
     # @entries = Entry.where(params[:id])
   end

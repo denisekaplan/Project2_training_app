@@ -1,19 +1,28 @@
 class EntriesController < ApplicationController
   def index
-  	  @entries = Entry.all
+      baby = Baby.where(id: params[:baby_id]).first
+  	  @entries = baby.entries.all
   end
 
   def new
+      @baby = Baby.where(id: params[:baby_id]).first
   	  @entry = Entry.new
+      @entry = @baby.entries.new
+
   end
 
   def create
+
+    raise "error"
+    baby = Baby.find(params[:baby_id])
   	# no need for it to be an instance variable (have an @), b/c we're not rendering a view
-  	entry = Entry.new(params.require(:entry).permit(:night_number, :bedtime, :awake, :asleep, :wake_up))
-  	  if entry.save
-  	  	 redirect_to entry_path(current_parent)
-  	  	# else 
-  	  	# 	render 'show'
+  	baby.entries << Entry.new(params.require(:entry).permit(:night_number, :bedtime, :awake, :asleep, :wake_up))
+  	  if baby.save
+          raise params.inspect 
+  	  	  redirect_to baby_url(:id => baby.id)
+  	  else 
+          raise params.inspect
+  	  		render 'show'
   	  end
   end
 

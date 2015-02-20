@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   resources :photos
   resource :sessions, only: [:new, :create, :destroy]
   # Establish a nested route with entries inside of babies
-  resources :babies #, only: [:index, :new, :create, :show, :edit] 
-  resources :entries #, only: [:index, :new, :create, :show, :edit]
- 
+  resources :babies do #, only: [:index, :new, :create, :show, :edit] 
+    resources :entries #, only: [:index, :new, :create, :show, :edit]
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

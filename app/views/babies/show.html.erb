@@ -1,10 +1,10 @@
 <p>Babies#show</p>
 
-<% @babies.each do |baby| %>
-<%= image_tag baby.avatar.url(:medium) %>
-I'm <%= baby.name %> and I'm <%= baby.age %> months old!
 
-<% end %>
+<%= image_tag @baby.avatar.url(:medium) %>
+I'm <%= @baby.name %> and I'm <%= @baby.age %> months old!
+
+
 <%= @baby.name %>'s Sleep Journal
 <table class= "table table-striped">
 	<thead>
@@ -23,11 +23,12 @@ I'm <%= baby.name %> and I'm <%= baby.age %> months old!
 			<td><%= entry.awake %></td>
 			<td><%= entry.asleep %></td>
 			<td><%= entry.wake_up %></td>
+			<td><%=  link_to "Edit Journal Info", edit_baby_entry_path(@baby, @entry) %></td>
 	 	</tr>
 	<% end %> 			  
 </table>
-<%= link_to "Edit Journal Info", edit_entry_path %>
-<%= link_to "Add New Night", new_entry_path %>
+
+<%= link_to "Add New Night", new_baby_entry_path(@baby) %>
 
 
 

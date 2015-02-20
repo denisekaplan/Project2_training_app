@@ -1,6 +1,6 @@
 <h1>Edit Sleep Journal</h1>
 
-<%= form_for @entry do |f| %>
+<%= form_for [@baby, @entry] do |f| %>
   Night #: <%= f.number_field :night_number %>
   Bedtime: <%= f.time_field :bedtime %>
   Awake: <%= f.time_field :awake %>

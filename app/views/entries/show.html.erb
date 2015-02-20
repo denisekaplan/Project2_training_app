@@ -1,15 +1,23 @@
 <h1>Entries#show</h1>
 <p>Find me in app/views/entries/show.html.erb</p>
-<% @entry.each do |e| %>
-<table>
-<tr>
+<% baby.entry.each do |entry| %> 
+<table class= "table table-striped">
+	<thead>
+		<tr>
+			<th>Night #</th>
+			<th>Bedtime</th>
+			<th>Asleep</th>
+			<th>Awake</th>
+			<th>Wake Up</th>
+		</tr>
+	</thead>
 
-	<td>Night #: <%= e.night_number %></td>
-	<td>Bedtime: <%= e.bedtime %></td>
-	<td>Awake: <%= e.awake %></td>
-	<td>Asleep: <%= e.asleep %></td>
-	<td>Wake up: <%= e.wake_up %></td>
-</tr>
+			<td><%= entry.night_number %></td>
+			<td><%= entry.bedtime %></td>
+			<td><%= entry.awake %></td>
+			<td><%= entry.asleep %></td>
+			<td><%= entry.wake_up %></td>
+	 	</tr>
+	<% end %> 			  
 </table>
-<% end %>
 <%= link_to "Add New Night", new_entry_path %>
