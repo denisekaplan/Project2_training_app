@@ -8,22 +8,17 @@ class EntriesController < ApplicationController
       @baby = Baby.where(id: params[:baby_id]).first
   	  @entry = Entry.new
       @entry = @baby.entries.new
-
   end
 
   def create
-
-    raise "error"
     baby = Baby.find(params[:baby_id])
   	# no need for it to be an instance variable (have an @), b/c we're not rendering a view
-  	baby.entries << Entry.new(params.require(:baby, :entry).permit(:night_number, :bedtime, :awake, :asleep, :wake_up))
-  	  if baby.save
-          raise params.inspect 
-  	  	  redirect_to baby_url(:id => baby.id)
-  	  else 
-          raise params.inspect
-  	  		render 'show'
-  	  end
+  	baby.entries << Entry.new(params.require(:entry).permit(:night_number, :bedtime, :awake, :asleep, :wake_up))
+	  if baby.save
+	  	  redirect_to baby_url(:id => baby.id)
+	  else 
+	  		render 'show'
+	  end
   end
 
   def show
@@ -31,6 +26,7 @@ class EntriesController < ApplicationController
   end
 
   def edit
+      @baby = Baby.find(params[:baby_id])
       @entry = Entry.find(params[:id])
   end
 

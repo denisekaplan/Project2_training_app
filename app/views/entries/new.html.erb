@@ -1,9 +1,8 @@
 <h1>Entries#new</h1>
 
 <h1>Log Your Baby's Sleep Pattern!</h1>
-<form class="form-inline">
 <!-- f= form -->
-<%= form_for [@baby, @entry], url: {action: "create"} do |f| %>
+<%= form_for [@baby, @entry], html:{class: "form-inline"} do |f| %>
   Night #: <%= f.number_field :night_number, class: "form-control" %>
   Bedtime: <%= f.time_field :bedtime %>
   Awake: <%= f.time_field :awake %>
@@ -13,5 +12,3 @@
 
   <%= f.submit "Log This Night", class: "btn btn-primary" %>
 <% end %>
-</form>
-

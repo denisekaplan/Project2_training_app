@@ -23,7 +23,7 @@ I'm <%= @baby.name %> and I'm <%= @baby.age %> months old!
 			<td><%= entry.awake %></td>
 			<td><%= entry.asleep %></td>
 			<td><%= entry.wake_up %></td>
-			<td><%=  link_to "Edit Journal Info", edit_baby_entry_path(@baby, @entry) %></td>
+			<td><%=  link_to "Edit Journal Info", edit_baby_entry_path(@baby, entry) %></td>
 	 	</tr>
 	<% end %> 			  
 </table>

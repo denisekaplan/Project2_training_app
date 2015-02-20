@@ -1,10 +1,10 @@
 <h1>Babies#index</h1>
 <p>Find me in app/views/babies/index.html.erb</p>
 
-<% @babies.each do |baby| %>
-<ul>
-<img><%= link_to(image_tag(baby.avatar.url(:medium)), baby) %></img>
-I'm <%= baby.name %> and I'm <%= baby.age %> months old!
-<%= baby.parent.name %> is my Mommy/Daddy!
-</ul>
+	<% @babies.each do |baby| %>
+	<ul>
+		<img><%= link_to(image_tag(baby.avatar.url(:medium)), baby) %></img>
+		I'm <%= baby.name %> and I'm <%= baby.age %> months old!
+		<%= baby.parent.name %> is my Mommy/Daddy!
+	</ul>
 <% end %>
