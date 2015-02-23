@@ -1,14 +1,15 @@
 
-<p>Find me in app/views/babies/edit.html.erb</p>
+<div class = "container" >
 
-<h1>Edit Baby Info</h1>
+	<h1>Edit Baby Info</h1>
 
-<%= form_for @baby do |f| %>
-	Name: <%= f.text_field :name %>
-	Age: <%= f.number_field :age %> months
-	Change Picture: <%= f.file_field :avatar %>
+	<%= form_for @baby do |f| %>
+	  Name: <%= f.text_field :name %><br />
+	  Age: <%= f.number_field :age %> months <br />
+	  Change Picture: <%= f.file_field :avatar %> <br />
+	  <%= f.submit "Update Baby Info" %>
+	<% end %>
 
-  <%= f.submit "Update Baby Info" %>
-<% end %>
-
-redirect_to baby_path
+	<!-- redirect_to baby_path -->
+	</div>
+	<p>Find me in app/views/babies/edit.html.erb</p>

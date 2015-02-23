@@ -2,39 +2,68 @@
 <html>
 <head>
   <title>Sleep Training App</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+  <link href='css/main.css' rel='stylesheet'>
+  <link href='http://fonts.googleapis.com/css?family=Merienda' rel='stylesheet' type='text/css'>
 
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  <style>
+  body {
+    text-align: center;
+    background-color: #FAFC92;
+    font-family: 'Merienda', cursive;
+    font-size: 16px;
+  }
 
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+ .navbar-brand {
+  font-weight: bolder;
+  font-style: 18px;
+ }
+
+ .navbar-brand img {
+  max-height: 30px;
+  max-width: 30px;
+ }
+
+.nav-pills>li+li {
+margin-left: 76px;
+}
+
+.crybaby{
+  height: 200px;
+  width: 200px;
+  margin-left: 533px;
+  margin-top: 40px;
+}
+li {
+  list-style: none;
+}
+
+  </style>
 
 </head>
 
 <body>
-<nav class="navbar navbar-default">
-  <div class="container">
+  <div class="container fluid">
     <% if current_parent != nil %>
-      <li> HOME</li>
-      <li> BABY </li>
-      <h5>
-        This is the person who's logged in: <%= current_parent.name %>
-      </h5>
-      <!-- with a button it's always post / link does a get request -->
-      <%= button_to "Log out", sessions_path, method: :delete %>
-    <% else %>
-
-      <%= button_to "Sign up", new_parent_path, method: :get %>
-      <%= link_to "Log in", new_sessions_path %> 
+      <a href= '/' class= 'navbar-brand'> 
+        <img src="/assets/chair.jpg" style="max-width: 100%">
+        Sleep Trainer
+      </a>
+      <ul class='nav nav-pills'>
+           <li><a href="#">Sleep Facts</a></li>
+          <li><a href="#">Suggested Bedtime Playlists</a></li>
+          <li><%= link_to "Your Babies", parent_path(current_parent) %></li>
+          <li>Hi, <%= current_parent.name %>!</li>       
+          <li><%= button_to "Log out", sessions_path, method: :delete %></li>
     <% end %>
+      </ul>
+      <!-- with a button it's always post / link does a get request -->
   </div>
-</nav>
 
 <%= yield %>
 

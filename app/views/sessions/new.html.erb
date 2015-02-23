@@ -1,15 +1,68 @@
-new.html.erb
-<!-- copied from parents-> new.html.erb -->
-<h1> Sleep Trainer </h1>
-<h2> Because if your kid ain't sleeping, neither are you!</h2>
-<p>Fact: If you don't sleep, you will turn into a moron, go crazy and die! (Okay, I totally made that up, but it definitely feels true.)</p>
+<!-- new.html.erb -->
+<style>
 
-<h3> Log in and get this kid sleeping so you can too! </h3>
+.jumbotron {
+    margin-bottom: 20px;
+    background-image: url("/assets/sleepy.jpg");
+    background-position: 0% -5%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    padding-bottom: 918px;
+    text-align: left;
+    max-height: 960px;
+}
 
-<%= form_for @parent, :url => { :controller => "sessions", :action => "create" } do |f| %>
-    <%= f.text_field :email, :placeholder => "Enter your email" %><br />
-    <%= f.password_field :password, :placeholder => "Enter your password" %><br />
-    <%= f.submit "Log In"%><br />
-    <%= link_to "Click here to sign up", new_parent_path %>
-<% end %>
+h1 {
+    margin: -17px;
+    font-size: 66px;
+    font-weight: bolder;
+ }   
+    
+h2 {
+    font-size: 32px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 
+}
+	
+body {
+    font-family: 'Merienda', cursive;
+    }
+
+.tag {
+    text-align: left;
+}
+
+.login {
+    text-align: center;
+    margin-left: 389px;
+    margin-top: 340px;
+}
+	
+</style>
+<div class="jumbotron">
+    <h1> Sleep Trainer </h1>
+    <div class = "tag container" >
+        <div class="col-md-4">
+            <h2> Because if your kid isn't sleeping, neither are you!</h2>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+
+                <p>Fact: If you don't sleep, you will go crazy and die! (Okay, I totally made that up, but it definitely feels true.)</p>
+        </div>
+    </div>    
+
+    <div class="login container">
+        <div class="col-md-4">
+            <h3> Log in and get your kid sleeping; so you can too! </h3>
+                <%= form_for @parent, :url => { :controller => "sessions", :action => "create" } do |f| %>
+                    <%= f.text_field :email, :placeholder => "Enter your email" %><br />
+                    <%= f.password_field :password, :placeholder => "Enter your password" %><br />
+                    <%= f.submit "Log In"%><br />
+                    <%= link_to "Click here to sign up", new_parent_path %>
+                <% end %>
+        </div>
+    </div>
+</div>

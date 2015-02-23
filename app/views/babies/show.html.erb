@@ -1,36 +1,35 @@
-<p>Babies#show</p>
 
-
-<%= image_tag @baby.avatar.url(:medium) %>
-I'm <%= @baby.name %> and I'm <%= @baby.age %> months old!
-
-
-<%= @baby.name %>'s Sleep Journal
-<table class= "table table-striped">
-	<thead>
-		<tr>
-			<th>Night #</th>
-			<th>Bedtime</th>
-			<th>Asleep</th>
-			<th>Awake</th>
-			<th>Wake Up</th>
-		</tr>
-	</thead>
-	<% @baby.entries.each do |entry| %>
-		<tr>
-			<td><%= entry.night_number %></td>
-			<td><%= entry.bedtime %></td>
-			<td><%= entry.awake %></td>
-			<td><%= entry.asleep %></td>
-			<td><%= entry.wake_up %></td>
-			<td><%=  link_to "Edit Journal Info", edit_baby_entry_path(@baby, entry) %></td>
-	 	</tr>
-	<% end %> 			  
-</table>
-
-<%= link_to "Add New Night", new_baby_entry_path(@baby) %>
-
-
+<body>
+<div class="container" >
+	<%= image_tag @baby.avatar.url(:medium) %> <br />
+	<p>I'm <%= @baby.name %> and I'm <%= @baby.age %> months old!</p>
+	<div class="journal">
+		<h1><%= @baby.name %>'s Sleep Journal </h1>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Night #</th>
+					<th>Bedtime</th>
+					<th>Asleep</th>
+					<th>Awake</th>
+					<th>Wake Up</th>
+				</tr>
+			</thead>
+		<% @baby.entries.each do |entry| %>
+				<tr>
+					<td><%= entry.night_number %></td>
+					<td><%= I18n.l entry.bedtime, :format => "%I:%m %p", :locale => :"en"%></td>
+					<td><%= I18n.l entry.asleep, :format => "%I:%m %p", :locale => :"en"%></td>
+					<td><%= I18n.l entry.awake, :format => "%I:%m %p", :locale => :"en"%></td>
+					<td><%= I18n.l entry.wake_up, :format => "%I:%m %p", :locale => :"en"%></td>
+					<td><%=  link_to "Edit Journal Info", edit_baby_entry_path(@baby, entry) %></td>
+			 	</tr>
+		<% end %> 			  
+		</table>
+		<%= link_to "Add New Night", new_baby_entry_path(@baby) %>
+	</div>
+</div>
+</body>
 
  
  

@@ -1,3 +1,4 @@
+<div class = "container" >
 <h1>Entries#show</h1>
 <p>Find me in app/views/entries/show.html.erb</p>
 <% baby.entry.each do |entry| %> 
@@ -11,13 +12,15 @@
 			<th>Wake Up</th>
 		</tr>
 	</thead>
-
+<tr>
 			<td><%= entry.night_number %></td>
-			<td><%= entry.bedtime %></td>
-			<td><%= entry.awake %></td>
-			<td><%= entry.asleep %></td>
-			<td><%= entry.wake_up %></td>
+			<td><%= I18n.l entry.bedtime, :format => "%I:%m %p", :locale => :"en"%></td>
+			<td><%= I18n.l entry.asleep, :format => "%I:%m %p", :locale => :"en"%></td>
+			<td><%= I18n.l entry.awake, :format => "%I:%m %p", :locale => :"en"%></td>
+			<td><%= I18n.l entry.wake_up, :format => "%I:%m %p", :locale => :"en"%></td>
+			<td><%=  link_to "Edit Journal Info", edit_baby_entry_path(@baby, entry) %></td>
 	 	</tr>
 	<% end %> 			  
 </table>
 <%= link_to "Add New Night", new_baby_entry_path %>
+</div>

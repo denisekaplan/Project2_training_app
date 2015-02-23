@@ -24,11 +24,11 @@ class BabiesController < ApplicationController
 
   def show
     @baby = Baby.where(id: params[:id]).first
-    # @babies = Baby.where(id: params[:id])
-    # @entries = @baby.entries
-    # @entry = @baby.entries
-    # @entries = Entry.where(baby_id: params[:id])
-    # @entries = Entry.where(params[:id])
+    @babies = Baby.where(id: params[:id])
+   # @entries = @baby.entries
+    #@entry = @baby.entries
+    @entries = Entry.where(baby_id: params[:id])
+    @entries = Entry.where(params[:id])
   end
 
   def edit

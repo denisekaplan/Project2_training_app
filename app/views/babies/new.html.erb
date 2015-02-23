@@ -1,13 +1,32 @@
-<h1>Babies#new</h1>
-<p>Find me in app/views/babies/new.html.erb</p>
-<h1>Enter Your Baby's Info</h1>
-<!-- f= form -->
-<%= form_for @baby do |f| %>
-  Name: <%= f.text_field :name %>
-  Age (in months): <%= f.number_field :age %> 
-  Gender: <%= f.text_field :gender %>
-  Avatar <%= f.file_field :avatar %>
-  
+<div class = "container" >
 
-  <%= f.submit "Let's get this kid sleeping!" %>
-<% end %>
+		<h1>Enter Your Baby's Info</h1>
+		<!-- f= form -->
+		<%= form_for @baby do |f| %>
+			  Name: <%= f.text_field :name %>
+			  Age (in months): <%= f.number_field :age %> 
+			  Gender: <%= f.text_field :gender %>
+			  Photo: <%= f.file_field :avatar %>
+			  <%= f.submit "Let's get your kid sleeping!" %>
+		<% end %>
+</div>
+<div class="crybaby">
+	<img src="/assets/crybaby-e0103b264c84cf59b4189404b371ff3a.jpg" alt="Crybaby" style="max-width: 100%">
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<p>Find me in app/views/babies/new.html.erb</p>
