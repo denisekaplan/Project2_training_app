@@ -7,7 +7,7 @@ Choose a baby:
 	<img><%= link_to(image_tag(baby.avatar.url(:medium)), baby) %></img><br />
 	I'm <%= baby.name %> and I'm <%= baby.age %> months old!<br />
 	<%= link_to "Edit Baby Info", edit_baby_path(baby) %><br />
-	<%= link_to "Add Another Baby", new_baby_path(current_parent) %>
+	<%= link_to "Add Another Baby", new_baby_path(current_parent) %><br />
 <% end %>
 <br />
 <br />
